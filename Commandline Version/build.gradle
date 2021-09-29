@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral();
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+jar {
+    archiveBaseName = 'Eng-VietDictionaryCMD'
+    archiveVersion = "1.0.0"
+
+    manifest {
+        attributes (   
+            'Main-Class': 'gr.twoguys.EngVietDictionary.Dictionary'
+        )
+    }
+}
