@@ -2,15 +2,21 @@ plugins {
     id 'java'
 }
 
+group "org.twoguys" 
+version "1.0.0"
+
 repositories {
     mavenCentral();
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
     testImplementation 'junit:junit:4.12'
+}
+
+configurations {
+    compileOnly {
+        canBeResolved = true
+    }
 }
 
 jar {
@@ -19,7 +25,13 @@ jar {
 
     manifest {
         attributes (   
-            'Main-Class': 'gr.twoguys.EngVietDictionary.Dictionary'
+            'Main-Class': 'org.twoguys.EngVietDictionary.Dictionary'
         )
+    }
+
+    from {
+        configurations.compileOnly.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
     }
 }
