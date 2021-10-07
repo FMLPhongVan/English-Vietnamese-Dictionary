@@ -21,7 +21,7 @@ configurations {
 
 jar {
     archiveBaseName = 'Eng-VietDictionaryCMD'
-    archiveVersion = "1.1.1"
+    archiveVersion = "1.1.2"
 
     manifest {
         attributes (   

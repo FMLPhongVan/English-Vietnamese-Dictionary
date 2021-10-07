@@ -40,7 +40,7 @@ public class DictionaryManagement {
     private ArrayList<TrieNode> trieList = new ArrayList<TrieNode>();
     private Scanner sc = new Scanner(System.in);
     private final String ORIGINAL_WORD_SOURCE = "/eng-dictionaries.txt";
-    private final String USER_WORD_SOURCE = "/user-eng-dictionaries.txt";
+    private final String USER_WORD_SOURCE = "\\user-eng-dictionaries.txt";
 
     private void addWord(Word newWord) {
         int r = 0;
@@ -150,12 +150,17 @@ public class DictionaryManagement {
                 if (type == 0) {
                     input = DictionaryManagement.class.getResourceAsStream(ORIGINAL_WORD_SOURCE);
                 } else {
-                    String userWordDir = System.getProperty("user.home").concat("/Documents/Eng-VietDictionaryCMD/User Data");
-                    File f = new File(userWordDir + USER_WORD_SOURCE);
+                    String userDictionaryDir = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD");
+                    File userDir = new File(userDictionaryDir);
+                    userDir.mkdir();
+                    userDictionaryDir = userDictionaryDir.concat("\\User Data");
+                    userDir = new File(userDictionaryDir);
+                    userDir.mkdir();
+                    File f = new File(userDictionaryDir + USER_WORD_SOURCE);
                     if (f.createNewFile()) {
                         break;
                     } else {
-                        input = new FileInputStream(userWordDir + USER_WORD_SOURCE);
+                        input = new FileInputStream(userDictionaryDir + USER_WORD_SOURCE);
                     }
                 }
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input, "UTF-8"));
