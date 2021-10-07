@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.text.BreakIterator;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,6 +43,14 @@ public class DictionaryManagement {
     private final String ORIGINAL_WORD_SOURCE = "/eng-dictionaries.txt";
     private final String USER_WORD_SOURCE = "\\user-eng-dictionaries.txt";
     private final String USER_DICTIONARY_DIR = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD");
+
+    private String repeat(String t, int times) {
+        String ans = "";
+        for (int i = 0; i < times; ++i) {
+            ans += t;
+        }
+        return ans;
+    }
 
     private void addWord(Word newWord) {
         int r = 0;
@@ -196,7 +205,7 @@ public class DictionaryManagement {
     }
 
     public void run() {
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
         System.out.format("|| %-150s||\n", "                                TU DIEN ANH - VIET");
         System.out.format("|| %-150s||\n", "");
         System.out.format("|| %-150s||\n", "                                Viet boi Twoguys");
@@ -231,7 +240,7 @@ public class DictionaryManagement {
                 enable = false;
                 System.out.format("|| %-150s||\n", "");
                 System.out.format("|| %-150s||\n", "                      Cam on ban da su dung tu dien cua Twoguys.");
-                System.out.println("||" + "-".repeat(151) + "||");
+                System.out.println("||" + repeat("-", 151) + "||");
             }
             else {
                 System.out.format("|| %-150s||\n", "Error! Khong nhan ra cau lenh nay. Hay thu lai!");
@@ -247,7 +256,7 @@ public class DictionaryManagement {
     }
 
     public void insertEraseFromCommandline() {
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
         System.out.format("|| %-150s||\n", "Co 4 lenh sau co the dung trong phan Them/Xoa:");
         System.out.format("|| %-150s||\n", "  ADD    : Them 1 tu vao tu dien.");
         System.out.format("|| %-150s||\n", "  DELETE : Xoa 1 tu trong nhung tu ban da them vao.");
@@ -277,10 +286,10 @@ public class DictionaryManagement {
                     while (true) {
                         System.out.format("|| ");
                         input = sc.nextLine().trim();
-                        if (!Pattern.matches(addRegex, input)) {
-                            System.out.format("|| %-150s||\n", "Ban da nhap sai dinh dang, hay nhap lai.");
-                        } else if (input.equals("ABORT")){
+                        if (input.equals("ABORT")) {
                             break;
+                        } else if (!Pattern.matches(addRegex, input)) {
+                            System.out.format("|| %-150s||\n", "Ban da nhap sai dinh dang, hay nhap lai.");
                         } else {
                             handleWordFromSource(input, 1);
                             save = false;
@@ -389,11 +398,11 @@ public class DictionaryManagement {
                 System.out.format("|| %-150s||\n", "");
             }
         }
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
     }
 
     public void showAllWord() {
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
         System.out.format("|| %-8s| %-40s| %-98s||\n", "STT", "Tieng Anh", "Tieng Viet");
         String word = "", sampleExplain = "";
 
@@ -406,7 +415,7 @@ public class DictionaryManagement {
 
             System.out.format("|| %-8d| %-40s| %-98s||\n", i, word, sampleExplain);
         }
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
     }
 
     /**
@@ -417,7 +426,7 @@ public class DictionaryManagement {
         String input = "";
         boolean enable = true;
 
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
         while (enable) {
             while (true) {
                 System.out.format("|| %s", "Nhap tu ma ban muon tim hoac nhap \"EXIT\" de dung tra cuu: ");
@@ -438,7 +447,7 @@ public class DictionaryManagement {
                         System.out.format("|| %-150s||\n", "Nghia:");
                         trieList.get(wordPos).word.getFullExplaination();
                     }
-                    System.out.println("||" + "-".repeat(151) + "||");
+                    System.out.println("||" + repeat("-", 151) + "||");
                 }
             }
         }
@@ -451,7 +460,7 @@ public class DictionaryManagement {
         ArrayDeque<Integer> trieNode = new ArrayDeque<Integer>();
         ArrayList<Integer> wordFoundPos = new ArrayList<Integer>();
 
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
         while (enable) {
             while (true) {
                 System.out.format("|| %s", "Nhap tu ma ban muon tim hoac nhap \"EXIT\" de dung tra cuu: ");
@@ -514,7 +523,7 @@ public class DictionaryManagement {
                         trieNode.clear();
                         wordFoundPos.clear();
                     }
-                    System.out.println("||" + "-".repeat(151) + "||");
+                    System.out.println("||" + repeat("-", 151) + "||");
                 }
             }
         }
@@ -525,7 +534,7 @@ public class DictionaryManagement {
         String userHome = System.getProperty("user.home");
         String dictionaryDir = userHome.concat("\\Documents\\Eng-VietDictionaryCMD");
         File f = new File(dictionaryDir);
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
         f.mkdir();
         try {
             FileOutputStream outputURL = new FileOutputStream(dictionaryDir.concat("\\dictionaryData.txt"));
@@ -550,6 +559,6 @@ public class DictionaryManagement {
             System.out.format("|| %-150s||\n", "Error! Khong the xuat file." + e.getMessage());
             e.printStackTrace();
         }
-        System.out.println("||" + "-".repeat(151) + "||");
+        System.out.println("||" + repeat("-", 151) + "||");
     }
 }
