@@ -378,10 +378,10 @@ public class DictionaryManagement {
 
         for (int i = 0; i < wordList.size(); ++i) {
             word = wordList.get(i).getWord();
-            if (word.length() > 25)  word = word.substring(0, 36) + "..."; 
+            if (word.length() > 35)  word = word.substring(0, 36) + "..."; 
                 
             sampleExplain = wordList.get(i).getSampleExplain();
-            if (sampleExplain.length() > 65) sampleExplain = sampleExplain.substring(0, 94) + "...";
+            if (sampleExplain.length() > 93) sampleExplain = sampleExplain.substring(0, 94) + "...";
 
             System.out.format("|| %-8d| %-40s| %-98s||\n", i, word, sampleExplain);
         }
