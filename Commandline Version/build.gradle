@@ -19,9 +19,12 @@ configurations {
     }
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 jar {
     archiveBaseName = 'Eng-VietDictionaryCMD'
-    archiveVersion = "1.1.2"
+    archiveVersion = "1.1.3"
 
     manifest {
         attributes (   

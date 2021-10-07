@@ -41,6 +41,7 @@ public class DictionaryManagement {
     private Scanner sc = new Scanner(System.in);
     private final String ORIGINAL_WORD_SOURCE = "/eng-dictionaries.txt";
     private final String USER_WORD_SOURCE = "\\user-eng-dictionaries.txt";
+    private final String USER_DICTIONARY_DIR = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD");
 
     private void addWord(Word newWord) {
         int r = 0;
@@ -140,6 +141,25 @@ public class DictionaryManagement {
         }
     }
 
+    private boolean checkCreatedUserDir() {
+        File userDir = new File(USER_DICTIONARY_DIR);
+        if (userDir.mkdir()) {
+            File userDataDir = new File(USER_DICTIONARY_DIR + "\\User Data");
+            if (userDataDir.mkdir()) {
+                File userFile = new File(USER_DICTIONARY_DIR + "\\User Data" + USER_WORD_SOURCE);
+                try {
+                    userFile.createNewFile();
+                    return true;
+                } catch (IOException e) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } 
+        return false;
+    }
+
     public void init() {
         trieList.add(new TrieNode());
         
@@ -150,17 +170,10 @@ public class DictionaryManagement {
                 if (type == 0) {
                     input = DictionaryManagement.class.getResourceAsStream(ORIGINAL_WORD_SOURCE);
                 } else {
-                    String userDictionaryDir = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD");
-                    File userDir = new File(userDictionaryDir);
-                    userDir.mkdir();
-                    userDictionaryDir = userDictionaryDir.concat("\\User Data");
-                    userDir = new File(userDictionaryDir);
-                    userDir.mkdir();
-                    File f = new File(userDictionaryDir + USER_WORD_SOURCE);
-                    if (f.createNewFile()) {
+                    if (checkCreatedUserDir()) {
                         break;
                     } else {
-                        input = new FileInputStream(userDictionaryDir + USER_WORD_SOURCE);
+                        input = new FileInputStream(USER_DICTIONARY_DIR + "\\User Data" + USER_WORD_SOURCE);
                     }
                 }
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input, "UTF-8"));
@@ -240,6 +253,7 @@ public class DictionaryManagement {
         System.out.format("|| %-150s||\n", "  DELETE : Xoa 1 tu trong nhung tu ban da them vao.");
         System.out.format("|| %-150s||\n", "  SAVE   : Luu cac thay doi ma ban da thuc hien (Khong the hoan tac).");
         System.out.format("|| %-150s||\n", "  EXIT   : Thoat khoi chuc nang Them/Xoa.");
+        System.out.format("|| %-150s||\n", "Neu muon dung thao tac ADD hay delete, hay nhap ABORT.");
         System.out.format("|| %-150s||\n", "");
         System.out.format("|| %-150s||\n", "Luu y: Ban phai nhap cac tu moi theo dung dang duoi day.");
         System.out.format("|| %-150s||\n", "@tienganh    |* loai tu* nghia cua tu, = vi du + dich vi du|");
@@ -265,6 +279,8 @@ public class DictionaryManagement {
                         input = sc.nextLine().trim();
                         if (!Pattern.matches(addRegex, input)) {
                             System.out.format("|| %-150s||\n", "Ban da nhap sai dinh dang, hay nhap lai.");
+                        } else if (input.equals("ABORT")){
+                            break;
                         } else {
                             handleWordFromSource(input, 1);
                             save = false;
@@ -286,7 +302,6 @@ public class DictionaryManagement {
                         System.out.format("|| %-8d| %-140s||\n", i + 1, userWordList.get(i).getWord());
                     }
 
-                    System.out.format("|| %-150s||\n", "Neu khong muon xoa, hay nhap ABORT.");
                     System.out.format("|| %-150s||\n", "");
 
                     while (true) {
@@ -318,6 +333,7 @@ public class DictionaryManagement {
                     }
                 } else if (command.equals("SAVE")) {
                     try {
+                        checkCreatedUserDir();
                         String userWordDir = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD\\User Data");
                         FileOutputStream outputURL = new FileOutputStream(userWordDir.concat(USER_WORD_SOURCE));
                         PrintStream output = new PrintStream(outputURL, true, "UTF-8");
@@ -505,6 +521,7 @@ public class DictionaryManagement {
     }
 
     public void dictionaryExportToFile() {
+        checkCreatedUserDir();
         String userHome = System.getProperty("user.home");
         String dictionaryDir = userHome.concat("\\Documents\\Eng-VietDictionaryCMD");
         File f = new File(dictionaryDir);
