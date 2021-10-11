@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<TabPane prefHeight="720.0" prefWidth="1080.0" side="LEFT" style="-fx-control-inner-background: #121212; -fx-background-color: #121212; -fx-outer-border: #BB86FC; -fx-text-box-border: #3700B3;" tabMaxHeight="1.797691E308" tabMinHeight="50.0" tabMinWidth="50.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.DictionaryGUI.DictionaryController">
+   <tabs>
+      <Tab closable="false" style="-fx-focus-traversable: false; -fx-background-color: #121212; -fx-border-color: #BB86FC;">
+         <content>
+            <AnchorPane prefHeight="720.0" prefWidth="1020.0" style="-fx-control-inner-background: #3700B3;">
+               <children>
+                  <Button blendMode="SRC_ATOP" focusTraversable="false" layoutX="254.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: #121212; -fx-border-color: #BB86FC; -fx-border-width: 2;" text="Tìm kiếm" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <graphic>
+                          <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true" smooth="false">
+                              <Image url="@search-button.png" />
+                          </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchTextField" focusTraversable="false" layoutX="14.0" layoutY="14.0" onAction="#onEnter" onKeyTyped="#onSearching" prefHeight="34.0" prefWidth="240.0" promptText="Nhập từ cần tra ..." style="-fx-background-color: #121212; -fx-border-color: #BB86FC; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-width: 2;">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ListView fx:id="searchListView" focusTraversable="false" layoutX="14.0" layoutY="40.0" onMousePressed="#showSearchedWord" prefHeight="320.0" prefWidth="240.0" style="-fx-selection-bar: #BB86FC; -fx-selection-bar-non-focused: #BB86FC;" visible="false" />
+                  <SplitPane layoutX="353.6000061035156" layoutY="47.0" AnchorPane.rightAnchor="0.0">
+                     <items>
+                        <ScrollPane pickOnBounds="false" prefHeight="675.0" prefWidth="667.0" style="-fx-border-color: #6200EE; -fx-border-width: 5;">
+                           <content>
+                              <TextFlow fx:id="searchedWord" prefHeight="660.0" prefWidth="660.0" style="-fx-background-color: #121212; -fx-text-fill: white;" />
+                           </content>
+                        </ScrollPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </content>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@search-word-tab.png" />
+            </ImageView>
+         </graphic>
+      </Tab>
+      <Tab closable="false" style="-fx-background-color: #121212; -fx-border-color: #BB86FC;">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@history-tab.png" />
+            </ImageView>
+         </graphic>
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="searchHistory" prefHeight="640.0" prefWidth="400.0" style="-fx-control-inner-background: #121212; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab closable="false" style="-fx-background-color: #121212; -fx-border-color: #BB86FC;">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@edit-tab.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Tab>
+      <Tab closable="false" style="-fx-background-color: #121212; -fx-border-color: #BB86FC;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@settings.png" />
+            </ImageView>
+         </graphic>
+      </Tab>
+      <Tab closable="false" style="-fx-background-color: #121212; -fx-border-color: #BB86FC;">
+        <content>
+            <Pane>
+               <children>
+                  <TextArea layoutX="253.2" layoutY="80.0" prefHeight="240.0" prefWidth="640.0" promptText="Nhập văn bản cần dịch" style="-fx-border-color: #BB86FCFF; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-width: 2;">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font></TextArea>
+                  <TextArea layoutX="253.2" layoutY="400.0" prefHeight="240.0" prefWidth="640.0" promptText="Văn bản đã được dịch" style="-fx-border-color: #BB86FCFF; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-width: 2;">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font></TextArea>
+                  <ToolBar layoutX="253.0" layoutY="339.0" prefHeight="40.0" prefWidth="640.0" style="-fx-background-color: #6200EE; -fx-border-color: #BB86FC; -fx-border-width: 2;">
+                    <items>
+                      <Button mnemonicParsing="false" style="-fx-background-color: #121212; -fx-border-color: white;" text="Dịch" textFill="WHITE" />
+                        <Button mnemonicParsing="false" style="-fx-background-color: #121212; -fx-border-color: white;">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <Image url="@swap.png" />
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                    </items>
+                  </ToolBar>
+                  <Label layoutX="121.0" layoutY="80.0" text="Tiếng Việt" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="121.0" layoutY="400.0" text="Tiếng Anh" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+        </content>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@translate-doc-tab.png" />
+            </ImageView>
+         </graphic>
+      </Tab>
+   </tabs>
+</TabPane>
