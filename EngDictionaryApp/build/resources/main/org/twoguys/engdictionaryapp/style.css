@@ -1,0 +1,27 @@
+.button {
+    -fx-background-color: #333333;
+    -fx-text-fill: #FFFFFF;
+}
+
+.anchor-pane {
+    -fx-background-color: #121212;
+}
+
+.vbox {
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: transparent #999999 transparent transparent;
+    -fx-background-color: #333333;
+}
+/*
+.label {
+    -fx-border-width: 1px;
+    -fx-border-color: #FFFFFF;
+}*/
+
+.scroll-pane {
+    -fx-background-color: #121212;
+}
+
+.list-view {
+    -fx-background-color: #262626;
+}

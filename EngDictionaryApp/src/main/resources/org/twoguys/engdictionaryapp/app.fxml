@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="anchor-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.twoguys.engdictionaryapp.DictionaryController">
+   <children>
+      <VBox fx:id="miniMenuPane" alignment="TOP_CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="60.0" spacing="30.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <children>
+            <JFXButton fx:id="menuExtend" contentDisplay="GRAPHIC_ONLY" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onMenuExtendClicked" prefHeight="35.0" prefWidth="35.0" textOverrun="CLIP">
+               <graphic>
+                  <FontIcon fx:id="menuIcon" iconColor="WHITE" iconLiteral="dashicons-menu" iconSize="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="searchMiniButton" contentDisplay="GRAPHIC_ONLY" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onMiniSearchButtonClicked" prefHeight="35.0" prefWidth="35.0" textOverrun="CLIP">
+               <graphic>
+                  <FontIcon fx:id="searchIcon" iconColor="WHITE" iconLiteral="fa-search" iconSize="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" textOverrun="CLIP">
+               <graphic>
+                  <FontIcon fx:id="historyIcon" iconColor="WHITE" iconLiteral="fa-history" iconSize="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" ellipsisString="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" textOverrun="CLIP">
+               <graphic>
+                  <FontIcon fx:id="editIcon" iconColor="WHITE" iconLiteral="fa-edit" iconSize="30" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="menuPane" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="260.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="260.0" spacing="30.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="menuClose" alignment="TOP_LEFT" ellipsisString="" graphicTextGap="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onMenuCloseClicked" prefHeight="35.0" prefWidth="258.0" text="MENU" textOverrun="CLIP">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon accessibleRole="IMAGE_VIEW" iconColor="WHITE" iconLiteral="dashicons-menu" iconSize="30" selectionEnd="0" selectionStart="0" tabSize="0" textAlignment="CENTER" translateX="5.0" translateY="-2.0" viewOrder="1.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="searchLargeButton" alignment="TOP_LEFT" ellipsisString="" graphicTextGap="62.0" onMouseClicked="#onLargeSearchButtonClicked" prefHeight="35.0" prefWidth="260.0" text="TÌM KIẾM" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-search" iconSize="30" translateX="6.0" translateY="-2.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" graphicTextGap="69.4" prefHeight="35.0" prefWidth="260.0" text="LỊCH SỬ" translateY="-7.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon fx:id="historyIcon1" iconColor="WHITE" iconLiteral="fa-history" iconSize="30" translateX="7.0" translateY="-0.5" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_LEFT" graphicTextGap="51.0" prefHeight="35.0" prefWidth="260.0" text="CHỈNH SỬA" translateY="-12.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon fx:id="editIcon1" iconColor="WHITE" iconLiteral="fa-edit" iconSize="30" translateX="5.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="searchPane" layoutX="63.0" layoutY="6.0" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="720.0" prefWidth="1023.0" styleClass="anchor-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="8.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="1019.0" text="TÌM KIẾM" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="searchTextField" layoutX="-1.0" layoutY="36.0" onKeyTyped="#onEnterSearchField" prefHeight="50.0" prefWidth="350.0" promptText="Nhập từ muốn tra ..." AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="349.4" styleClass="anchor-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="90.0">
+               <children>
+                  <ListView layoutY="-31.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <WebView prefHeight="447.0" prefWidth="466.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
