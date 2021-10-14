@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class DictionaryController implements Initializable {
     @FXML
-    private AnchorPane menuPane, searchPane;
+    private AnchorPane menuPane, searchPane, editPane;
 
     @FXML
     private TextField searchTextField;
@@ -40,6 +40,7 @@ public class DictionaryController implements Initializable {
 
     @FXML
     private JFXButton menuClose, menuExtend, searchMiniButton, searchLargeButton, soundButton;
+    private JFXButton editButton, bigEditButton;
 
     //private final double MINI_MENU_WIDTH = menuPane.getWidth();
     //private final double MINI_MENU_HEIGHT = menuPane.getWidth();
@@ -59,62 +60,43 @@ public class DictionaryController implements Initializable {
         allWordList.toFront();
     }
 
+    private void changeMenuPanePos(double duration, double fadeFromValue, double fadeToValue, int posChanges) {
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(duration), menuPane);
+        fadeTransition.setFromValue(fadeFromValue);
+        fadeTransition.setToValue(fadeToValue);
+        fadeTransition.play();
+
+        TranslateTransition movePane = new TranslateTransition(Duration.seconds(duration), menuPane);
+        movePane.setByX(posChanges);
+        movePane.play();
+        menuPane.setTranslateX(menuPane.getTranslateX() + posChanges);
+    }
+
     public void onMenuExtendClicked(MouseEvent event) {
         System.out.println(menuPane.getTranslateX());
         if (menuPane.getTranslateX() != -600) return;
         System.out.println("Extend");
         miniMenuPane.setVisible(false);
-
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), menuPane);
-        fadeTransition.setFromValue(0.5);
-        fadeTransition.setToValue(1);
-        fadeTransition.play();
-
-        TranslateTransition movePane = new TranslateTransition(Duration.seconds(0.5), menuPane);
-        movePane.setByX(+600);
-        movePane.play();
-        menuPane.setTranslateX(0);
+        changeMenuPanePos(0.5, 0.5, 1, +600);
         menuPane.toFront();
     }
 
     public void onMenuCloseClicked(MouseEvent event) {
-        System.out.println(menuPane.getTranslateX());
         if (menuPane.getTranslateX() != 0) return;
         System.out.println("Close");
-
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), menuPane);
-        fadeTransition.setFromValue(1);
-        fadeTransition.setToValue(0.5);
-        fadeTransition.play();
-
-        TranslateTransition movePane = new TranslateTransition(Duration.seconds(0.5), menuPane);
-        movePane.setByX(-600);
-        movePane.play();
-        menuPane.setTranslateX(-600);
+        changeMenuPanePos(0.5, 1, 0.5, -600);
         menuPane.toBack();
         miniMenuPane.setVisible(true);
     }
 
     public void onMiniSearchButtonClicked(MouseEvent e) {
-        System.out.println("Mini Search");
         searchPane.toFront();
     }
 
     public void onLargeSearchButtonClicked(MouseEvent e) {
-        System.out.println("Big Search");
-        System.out.println(menuPane.getTranslateX());
         if (menuPane.getTranslateX() != 0) return;
         System.out.println("Close");
-
-        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), menuPane);
-        fadeTransition.setFromValue(1);
-        fadeTransition.setToValue(0);
-        fadeTransition.play();
-
-        TranslateTransition movePane = new TranslateTransition(Duration.seconds(0.5), menuPane);
-        movePane.setByX(-600);
-        movePane.play();
-        menuPane.setTranslateX(-600);
+        changeMenuPanePos(0.5, 1, 0.5, -600);
         menuPane.toBack();
         miniMenuPane.setVisible(true);
         searchPane.toFront();
@@ -144,5 +126,17 @@ public class DictionaryController implements Initializable {
 
     public void onSoundButtonClicked() {
         //dictionaryManagement.playSoundWord(foundWord.getText());
+    }
+
+    public void onEditButtonClicked(MouseEvent e) {
+        editPane.toFront();
+    }
+
+    public void onBigEditButtonClicked(MouseEvent e) {
+        if (menuPane.getTranslateX() != 0) return;
+        changeMenuPanePos(0.5, 1, 0.5, -600);
+        menuPane.toBack();
+        miniMenuPane.setVisible(true);
+        editPane.toFront();
     }
 }

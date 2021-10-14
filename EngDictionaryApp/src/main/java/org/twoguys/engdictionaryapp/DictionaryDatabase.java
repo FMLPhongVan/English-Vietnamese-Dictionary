@@ -59,9 +59,6 @@ public class DictionaryDatabase {
         boolean hasOlOpenTag = false;
         boolean hasOlCloseTag = true;
         for (int i = 0; i < wordData.size(); ++i) {
-            System.out.println(wordData.get(i));
-        }
-        for (int i = 0; i < wordData.size(); ++i) {
             if (wordData.get(i).charAt(0) == '@' && wordData.get(i).length() != 1) {
                 if (!hasOlCloseTag) {
                     html += "</ol>";

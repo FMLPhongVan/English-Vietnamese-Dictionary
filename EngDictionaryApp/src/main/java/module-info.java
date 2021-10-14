@@ -9,6 +9,7 @@ module org.twoguys.engdictionaryapp {
     requires java.sql;
     requires javafx.graphics;
     requires java.desktop;
+    requires voicersstts;
 
     opens org.twoguys.engdictionaryapp to javafx.fxml;
     exports org.twoguys.engdictionaryapp;
