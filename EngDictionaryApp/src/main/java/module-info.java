@@ -8,6 +8,7 @@ module org.twoguys.engdictionaryapp {
     requires javafx.web;
     requires java.sql;
     requires javafx.graphics;
+    requires java.desktop;
 
     opens org.twoguys.engdictionaryapp to javafx.fxml;
     exports org.twoguys.engdictionaryapp;

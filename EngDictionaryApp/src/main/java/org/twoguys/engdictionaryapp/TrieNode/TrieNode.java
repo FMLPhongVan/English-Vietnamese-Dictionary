@@ -2,7 +2,7 @@ package org.twoguys.engdictionaryapp.TrieNode;
 
 public class TrieNode {
     private int[] child = new int[71];
-    private Word word = null;
+    private Word word;
 
     public TrieNode() {
         for (int j = 0; j < 71; ++j) {
