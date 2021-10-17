@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="Commandline Version:jar">
-    <output-path>$PROJECT_DIR$/Run/Commandline_Version_jar</output-path>
+    <output-path>$PROJECT_DIR$/Run</output-path>
     <root id="archive" name="Commandline_Version.jar">
       <element id="module-output" name="Commandline Version" />
       <element id="module-source" name="Commandline Version" />
