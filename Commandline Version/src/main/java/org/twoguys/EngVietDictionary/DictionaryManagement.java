@@ -43,6 +43,9 @@ public class DictionaryManagement {
     private final String USER_WORD_SOURCE = "\\user-vie-dictionaries.txt";
     private final String USER_DICTIONARY_DIR = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD");
 
+    /**
+     * Repeat a String several times.
+     */
     private String repeat(String t, int times) {
         String ans = "";
         for (int i = 0; i < times; ++i) {
@@ -51,6 +54,9 @@ public class DictionaryManagement {
         return ans;
     }
 
+    /**
+     * Add word to the Trie list.
+     */
     private void addWord(Word newWord) {
         int r = 0;
         for (int i = 0; i < newWord.getWord().length(); ++i) {
@@ -83,7 +89,10 @@ public class DictionaryManagement {
             trieList.get(r).word.setExplain(newExplain);
         }
     }
-    
+
+    /**
+     * Find position of a word in Trie list.
+     */
     private int searchWordPos(String word) {
         int r = 0;
         for (int i = 0; i < word.length(); ++i) {
@@ -149,6 +158,9 @@ public class DictionaryManagement {
         }
     }
 
+    /**
+     * Check existence of User dictionary directory.
+     */
     private boolean checkCreatedUserDir() {
         File userDir = new File(USER_DICTIONARY_DIR);
         if (userDir.mkdir()) {
@@ -164,7 +176,7 @@ public class DictionaryManagement {
             } else {
                 return false;
             }
-        } 
+        }
         return false;
     }
 
@@ -203,32 +215,35 @@ public class DictionaryManagement {
         });
     }
 
+    /**
+     * Initialize first application scene and listen to user's commands.
+     */
     public void run() {
         System.out.println("||" + repeat("-", 151) + "||");
-        System.out.format("|| %-150s||\n", "                                TU DIEN ANH - VIET");
+        System.out.format("|| %-150s||\n", "                                TỪ ĐIỂN ANH - VIỆT");
         System.out.format("|| %-150s||\n", "");
-        System.out.format("|| %-150s||\n", "                                Viet boi Twoguys");
+        System.out.format("|| %-150s||\n", "                                Viết bởi Twoguys");
         System.out.format("|| %-150s||\n", "");
         System.out.format("|| %-150s||\n", "");
-        System.out.format("|| %-150s||\n", "Chao mung ban da den voi Tu dien Anh-Viet. Duoi day la huong dan su dung:");
-        System.out.format("|| %-150s||\n", "Tu dien Anh-Viet co cac chuc nang chinh sau day:");
-        System.out.format("|| %-150s||\n", "   0 : Hien thi tat ca tu trong tu dien (In ra se lau do co gan 109k tu).");
-        System.out.format("|| %-150s||\n", "   1 : Them/Xoa tu vao trong tu dien.");
-        System.out.format("|| %-150s||\n", "   2 : Tim kiem tu (chinh xac tu ban nhap).");
-        System.out.format("|| %-150s||\n", "   3 : Tim kiem cac tu co phan dau giong tu ban nhap.");
-        System.out.format("|| %-150s||\n", "   4 : Xuat du lieu tu dien ra file txt.");
+        System.out.format("|| %-150s||\n", "Chào mừng bạn đã đến với Từ điển Anh-Việt. Dưới đây là hướng dẫn sử dụng:");
+        System.out.format("|| %-150s||\n", "Từ điển Anh-Việt có các chức năng chính sau đây:");
+        System.out.format("|| %-150s||\n", "   0 : Hiển thị tất cả từ trong từ điển (In ra sẽ lâu do có gần 109k từ).");
+        System.out.format("|| %-150s||\n", "   1 : Thêm/Xóa từ vào trong từ điển.");
+        System.out.format("|| %-150s||\n", "   2 : Tìm kiếm từ (chính xác từ bạn nhập).");
+        System.out.format("|| %-150s||\n", "   3 : Tìm kiếm các từ có phần đầu giống từ bạn nhập.");
+        System.out.format("|| %-150s||\n", "   4 : Xuất dữ liệu từ điển ra file txt.");
         System.out.format("|| %-150s||\n", "");
-        System.out.format("|| %-150s||\n", "Muon su dung 1 chuc nang cua tu dien, hay nhan so va nhan Enter.");
-        System.out.format("|| %-150s||\n", "Vi du: - Tim kiem tu \"home\", dau tien nhap 2 sau do Enter.");
-        System.out.format("|| %-150s||\n", "       - Sau do ban go \"home\", an Enter va tu dien se tra ket qua.");
+        System.out.format("|| %-150s||\n", "Muốn sử dụng 1 chức năng của từ điển, hãy nhấn số và nhấn Enter.");
+        System.out.format("|| %-150s||\n", "Ví dụ: - Tìm kiếm từ \"home\", đầu tiên nhập 2 sau đó Enter.");
+        System.out.format("|| %-150s||\n", "       - Sau dó bạn gõ \"home\", ấn Enter và từ điển sẽ trả kết quả.");
         System.out.format("|| %-150s||\n", "");
-        System.out.format("|| %-150s||\n", "Neu khong muon su dung cac chuc nang lien quan den tim kiem, hay nhap \"EXIT\" va an Enter.");
-        System.out.format("|| %-150s||\n", "Neu muon thoat khoi tu dien, nhap \"QUIT\" va an Enter.");
+        System.out.format("|| %-150s||\n", "Nếu không muốn sử dụng các chức năng liên quan đến tìm kiếm, hãy nhập \"EXIT\" và ấn Enter.");
+        System.out.format("|| %-150s||\n", "Nếu muốn thoát khỏi từ điển, nhập \"QUIT\" và ấn Enter.");
 
         boolean enable = true;
         String input = "";
         while (enable) {
-            System.out.print("|| Hay nhap chuc nang ma ban muon dung: ");
+            System.out.print("|| Hãy nhập chức năng mà bạn muốn dùng: ");
             input = sc.nextLine();
             if (input.equals("0")) showAllWord();
             else if (input.equals("1")) insertEraseFromCommandline();
@@ -238,15 +253,18 @@ public class DictionaryManagement {
             else if (input.equals("QUIT")) {
                 enable = false;
                 System.out.format("|| %-150s||\n", "");
-                System.out.format("|| %-150s||\n", "                      Cam on ban da su dung tu dien cua Twoguys.");
+                System.out.format("|| %-150s||\n", "                      Cảm ơn bạn đã sử dụng từ điển của Twoguys.");
                 System.out.println("||" + repeat("-", 151) + "||");
             }
             else {
-                System.out.format("|| %-150s||\n", "Error! Khong nhan ra cau lenh nay. Hay thu lai!");
+                System.out.format("|| %-150s||\n", "Error! Không nhận ra câu lệnh này.  Hãy thử lại!");
             }
         }
     }
 
+    /**
+     * Close the program.
+     */
     public void close() {
         wordList.clear();
         userWordList.clear();
@@ -254,19 +272,22 @@ public class DictionaryManagement {
         sc.close();
     }
 
+    /**
+     * Insert/Erase command handler.
+     */
     public void insertEraseFromCommandline() {
         System.out.println("||" + repeat("-", 151) + "||");
-        System.out.format("|| %-150s||\n", "Co 4 lenh sau co the dung trong phan Them/Xoa:");
-        System.out.format("|| %-150s||\n", "  ADD    : Them 1 tu vao tu dien.");
-        System.out.format("|| %-150s||\n", "  DELETE : Xoa 1 tu trong nhung tu ban da them vao.");
-        System.out.format("|| %-150s||\n", "  SAVE   : Luu cac thay doi ma ban da thuc hien (Khong the hoan tac).");
-        System.out.format("|| %-150s||\n", "  EXIT   : Thoat khoi chuc nang Them/Xoa.");
-        System.out.format("|| %-150s||\n", "Neu muon dung thao tac ADD hay delete, hay nhap ABORT.");
+        System.out.format("|| %-150s||\n", "Có 4 lệnh sau có thể dùng trong phần Thêm/Xóa:");
+        System.out.format("|| %-150s||\n", "  ADD    : Thêm 1 từ vào từ điển.");
+        System.out.format("|| %-150s||\n", "  DELETE : Xóa 1 từ trong những từ bạn đã thêm vào.");
+        System.out.format("|| %-150s||\n", "  SAVE   : Lưu các thay đổi mà bạn đã thực hiện (Không thể hoàn tác).");
+        System.out.format("|| %-150s||\n", "  EXIT   : Thoát khỏi chức năng Thêm/Xóa.");
+        System.out.format("|| %-150s||\n", "Nếu muốn dừng thao tác ADD hay DELETE, hãy nhập ABORT.");
         System.out.format("|| %-150s||\n", "");
-        System.out.format("|| %-150s||\n", "Luu y: Ban phai nhap cac tu moi theo dung dang duoi day.");
-        System.out.format("|| %-150s||\n", "@tienganh    |* loai tu* nghia cua tu, = vi du + dich vi du|");
-        System.out.format("|| %-150s||\n", "Cac khoang cach bat buoc phai bang 1 Tab (4 dau cach) va tat ca phai nhap tren 1 dong.");
-        System.out.format("|| Vi du: @breakeven    |* tinh tu* can bang giua so tien bo ra va so tien thu vao; khong loi khong lo; hoa von, = Breakeven point+Diem hoa von, = Breakeven price+Gia ban hoa von|\n");
+        System.out.format("|| %-150s||\n", "Lưu ý: Bạn phải nhập các từ mới theo đúng định dạng dưới đây.");
+        System.out.format("|| %-150s||\n", "@từtiếnganh    |* loại từ* nghĩa của từ, = ví dụ + dịch ví dụ|");
+        System.out.format("|| %-150s||\n", "Cac khoảng cách bắt buộc phải bằng 1 Tab (4 dấu cách) và tất cả phải nhập trên 1 dòng.");
+        System.out.format("|| Vi du: @breakeven    |* tính từ* cân bằng giữa số tiền bỏ ra và số tiền thu vào; không lời không lỗ; hòa vốn, = Breakeven point+Điểm hòa vốn, = Breakeven price+Giá bán hòa vốn|\n");
         System.out.format("|| %-150s||\n", "");
         System.out.format("|| %-150s||\n", "");
         
@@ -278,7 +299,7 @@ public class DictionaryManagement {
 
         while (enable) {
             while (true) {
-                System.out.format("|| %-150s||\n", "Nhap 1 trong 4 lenh \"ADD\", \"DELETE\", \"SAVE\", \"EXIT\":");
+                System.out.format("|| %-150s||\n", "Nhập 1 trong 4 lệnh \"ADD\", \"DELETE\", \"SAVE\", \"EXIT\":");
                 System.out.format("|| ");
                 command = sc.nextLine().trim();
                 if (command.equals("ADD")) {
@@ -288,7 +309,7 @@ public class DictionaryManagement {
                         if (input.equals("ABORT")) {
                             break;
                         } else if (!Pattern.matches(addRegex, input)) {
-                            System.out.format("|| %-150s||\n", "Ban da nhap sai dinh dang, hay nhap lai.");
+                            System.out.format("|| %-150s||\n", "Bạn đã nhập sai định dạng, hay nhập lại.");
                         } else {
                             handleWordFromSource(input, 1);
                             save = false;
@@ -298,14 +319,14 @@ public class DictionaryManagement {
                 } else if (command.equals("DELETE")) {
 
                     if (userWordList.isEmpty()) {
-                        System.out.format("|| %-150s||\n", "Error! Ban khong co tu nao de xoa.");
-                        System.out.format("|| %-150s||\n", "Ban chi duoc phep xoa nhung tu ban da them vao, ko dc phep xoa du lieu co san cua tu dien.");
+                        System.out.format("|| %-150s||\n", "Error! Bạn không có từ nào để xóa.");
+                        System.out.format("|| %-150s||\n", "Bạn chỉ được phép xóa những từ bạn đã thêm vào, ko dc phép xóa dữ liệu có sẵn của từ điển.");
                         continue;
                     } 
 
-                    System.out.format("|| %-150s||\n", "Danh sach cac tu ban co the xoa: ");
+                    System.out.format("|| %-150s||\n", "Danh sách các từ bạn có thể xóa: ");
                         
-                    System.out.format("|| %-8s| %-140s||\n", "STT", "Cac tu co the xoa");
+                    System.out.format("|| %-8s| %-140s||\n", "STT", "Các từ có thể xóa");
                     for (int i = 0; i < userWordList.size(); ++i) {
                         System.out.format("|| %-8d| %-140s||\n", i + 1, userWordList.get(i).getWord());
                     }
@@ -316,7 +337,7 @@ public class DictionaryManagement {
                         System.out.format("|| ");
                         input = sc.nextLine().trim();
                         if (!Pattern.matches("^[a-zA-Z0-9[-.\'/()]+]+( [a-zA-Z0-9[-.\'/()]+]+)*", input)) {
-                            System.out.format("|| %-150s||\n", "Tu cua ban khong duoc de trong va chi duoc chua cac ki tu a-z, A-Z, 0-9, -, \', /, (), space.");
+                            System.out.format("|| %-150s||\n", "Từ của bạn không được để trống và chỉ được chứa các kí tự a-z, A-Z, 0-9, -, \', /, (), space.");
                         } else if (input.equals("ABORT")) {
                             break;
                         } else {
@@ -335,7 +356,7 @@ public class DictionaryManagement {
                                 save = false;
                                 break;
                             } else {
-                                System.out.format("|| %-150s||\n", "Error! Khong tim thay tu nay. Hay thu lai!");
+                                System.out.format("|| %-150s||\n", "Error! Không tìm thấy từ này. Hãy thử lại!");
                             }
                         }
                     }
@@ -365,12 +386,12 @@ public class DictionaryManagement {
                         }
 
                         save = true;
-                        System.out.format("|| %-150s||\n", "Da luu thanh cong file user-vie-dictionaries.txt !");
-                        System.out.format("|| File duoc luu tai " + userWordDir + "\n");
+                        System.out.format("|| %-150s||\n", "Đã lưu thành công file user-vie-dictionaries.txt !");
+                        System.out.format("|| File được lưu tại " + userWordDir + "\n");
                         System.out.format("|| %-150s||\n", "");
-                        System.out.format("|| %-150s||\n", "Danh sach cac tu ban da them trong tu dien: ");
+                        System.out.format("|| %-150s||\n", "Danh sách các từ bạn đã thêm trong từ điển: ");
                         
-                        System.out.format("|| %-8s| %-140s||\n", "STT", "Cac tu da them");
+                        System.out.format("|| %-8s| %-140s||\n", "STT", "Các từ đã thêm");
                         for (int i = 0; i < userWordList.size(); ++i) {
                             System.out.format("|| %-8d| %-140s||\n", i + 1, userWordList.get(i).getWord());
                         }
@@ -386,13 +407,13 @@ public class DictionaryManagement {
                     }
                 } else if (command.equals("EXIT")) {
                     if (!save) {
-                        System.out.format("|| %-150s||\n", "Warning! Ban chua luu nhung thay doi cua minh, hay nhap \"SAVE\" de luu");
+                        System.out.format("|| %-150s||\n", "Warning! Bạn chưa lưu những thay đổi của mình, hãy nhập \"SAVE\" để lưu");
                     } else {
                         enable = false;
                         break;
                     }
                 } else {
-                    System.out.format("|| %-150s||\n", "Error! Khong nhan ra cau lenh nay. Hay thu lai!");
+                    System.out.format("|| %-150s||\n", "Error! Không nhận ra câu lệnh này. Hãy thử lại!");
                 }
                 System.out.format("|| %-150s||\n", "");
             }
@@ -400,9 +421,12 @@ public class DictionaryManagement {
         System.out.println("||" + repeat("-", 151) + "||");
     }
 
+    /**
+     * Show all words to the screen.
+     */
     public void showAllWord() {
         System.out.println("||" + repeat("-", 151) + "||");
-        System.out.format("|| %-8s| %-40s| %-98s||\n", "STT", "Tieng Anh", "Tieng Viet");
+        System.out.format("|| %-8s| %-40s| %-98s||\n", "STT", "Tiếng Anh", "Tiếng Việt");
         String word = "", sampleExplain = "";
 
         for (int i = 0; i < wordList.size(); ++i) {
@@ -428,10 +452,10 @@ public class DictionaryManagement {
         System.out.println("||" + repeat("-", 151) + "||");
         while (enable) {
             while (true) {
-                System.out.format("|| %s", "Nhap tu ma ban muon tim hoac nhap \"EXIT\" de dung tra cuu: ");
+                System.out.format("|| %s", "Nhập từ mà bạn muốn tìm hoặc nhập \"EXIT\" để dừng tra cứu: ");
                 input = sc.nextLine().trim();
                 if (!Pattern.matches("^[a-zA-Z0-9[-.\'/()]+]+( [a-zA-Z0-9[-.\'/()]+]+)*", input)) {
-                    System.out.format("|| %-150s||\n", "Tu cua ban khong duoc de trong va chi duoc chua cac ki tu a-z, A-Z, 0-9, -, \', /, (), space.");
+                    System.out.format("|| %-150s||\n", "Từ của bạn không đươc để trống và chỉ được chứa các kí tự a-z, A-Z, 0-9, -, \', /, (), space.");
                 } else {
                     if (input.equals("EXIT")) {
                         enable = false;
@@ -439,11 +463,11 @@ public class DictionaryManagement {
                     }
                     wordPos = searchWordPos(input);
                     if (wordPos == -1) {
-                        System.out.format("|| %-150s||\n", "Khong tim thay tu nay. Hay thu lai!");
+                        System.out.format("|| %-150s||\n", "Không tìm thấy từ này. Hãy thử lại!");
                     } else if (Objects.isNull(trieList.get(wordPos).word)) {
-                        System.out.format("|| %-150s||\n", "Khong tim thay tu nay. Hay thu lai!");
+                        System.out.format("|| %-150s||\n", "Không tìm thấy từ này. Hãy thử lại!");
                     } else {
-                        System.out.format("|| %-150s||\n", "Nghia:");
+                        System.out.format("|| %-150s||\n", "Nghĩa:");
                         trieList.get(wordPos).word.getFullExplaination();
                     }
                     System.out.println("||" + repeat("-", 151) + "||");
@@ -452,6 +476,9 @@ public class DictionaryManagement {
         }
     }
 
+    /**
+     * Search words begin with given string.
+     */
     public void dictionarySearcher() {
         int wordPos;
         String input = "";
@@ -462,11 +489,11 @@ public class DictionaryManagement {
         System.out.println("||" + repeat("-", 151) + "||");
         while (enable) {
             while (true) {
-                System.out.format("|| %s", "Nhap tu ma ban muon tim hoac nhap \"EXIT\" de dung tra cuu: ");
+                System.out.format("|| %s", "Nhập từ mà bạn muốn tìm hoặc nhập \"EXIT\" để dừng tra cứu: ");
                 input = sc.nextLine().trim();
                 //System.out.format("%-80s", "");
                 if (!Pattern.matches("^[a-zA-Z0-9[-.\'/()]+]+( [a-zA-Z0-9[-.\'/()]+]+)*", input)) {
-                    System.out.format("|| %-150s||\n", "Tu cua ban khong duoc de trong va chi duoc chua cac ki tu a-z, A-Z, 0-9, -, \', /, (), space.");
+                    System.out.format("|| %-150s||\n", "Từ của bạn không được để trong và chỉ được chứa các kí tự a-z, A-Z, 0-9, -, \', /, (), space.");
                 } else {
                     if (input.equals("EXIT")) {
                         enable = false;
@@ -475,7 +502,7 @@ public class DictionaryManagement {
                     wordPos = searchWordPos(input);
                     if (wordPos == -1) {
                         String spaces = String.format("%" + (117 - input.length()) + "s", "");
-                        System.out.format("|| Khong tim thay tu bat dau voi \"%s\"." + spaces + "||\n", input);
+                        System.out.format("|| Không tìm thấy từ bắt đầu với \"%s\"." + spaces + "||\n", input);
                     } else {
                         trieNode.add(wordPos);
                         while (!trieNode.isEmpty()) {
@@ -492,14 +519,14 @@ public class DictionaryManagement {
                         }
                         
                         String spaces = String.format("%" + (122 - String.valueOf(wordFoundPos.size()).length() - input.length()) + "s", "");
-                        System.out.format("|| Tim thay %d tu bat dau voi \"%s\":" + spaces + "||\n", wordFoundPos.size(), input, "");
+                        System.out.format("|| Tìm thấy %d từ bắt đầu với \"%s\":" + spaces + "||\n", wordFoundPos.size(), input, "");
                         for (int i = 0; i < wordFoundPos.size(); ++i) {
                             System.out.format("|| %-8d| %-140s||\n", i + 1, trieList.get(wordFoundPos.get(i)).word.getWord());
                         }
 
                         int pos = 0;
                         while (true) {
-                            System.out.format("|| %s", "Nhap so thu tu cua 1 trong cac tu tren hoac nhap \"EXIT\" de dung tra cuu cac tu tren: ");
+                            System.out.format("|| %s", "Nhập số thứ tự của 1 trong các từ trên hoặc nhập \"EXIT\" để dùng tra cứu các từ trên: ");
                             input = sc.nextLine().trim();
                             if (input.equals("EXIT")) {
                                 break;
@@ -507,14 +534,14 @@ public class DictionaryManagement {
                                 try {
                                     pos = Integer.parseInt(input);
                                     if (pos <= 0 || pos > wordFoundPos.size()) {
-                                        System.out.format("|| %-150s||\n", "Error! Ban phai nhap 1 so tu nhien trong khoang tren. Hay thu lai!");
+                                        System.out.format("|| %-150s||\n", "Error! Bạn phải nhập 1 số tự nhiên trong khoảng trên. Hãy thử lại!");
                                     } else {
                                         System.out.format("|| %-150s||\n", trieList.get(wordFoundPos.get(pos - 1)).word.getWord());
                                         trieList.get(wordFoundPos.get(pos - 1)).word.getFullExplaination();
                                         System.out.format("|| %-150s||\n", "");
                                     }
                                 } catch (NumberFormatException e) {
-                                    System.out.format("|| %-150s||\n", "Error! Ban phai nhap 1 so tu nhien trong khoang tren. Hay thu lai!");
+                                    System.out.format("|| %-150s||\n", "Error! Bạn phải nhập 1 số tự nhiên trong khoảng trên. Hãy thử lại!");
                                 }
                             }
                         }
@@ -528,6 +555,9 @@ public class DictionaryManagement {
         }
     }
 
+    /**
+     * Export user's dictionary to file.
+     */
     public void dictionaryExportToFile() {
         checkCreatedUserDir();
         String userHome = System.getProperty("user.home");
@@ -545,17 +575,17 @@ public class DictionaryManagement {
                 output.print("\n");
             }
 
-            System.out.format("|| Da xuat file dictionaryData.txt thanh cong, dia chi luu file: \"%s\".\n", dictionaryDir);
+            System.out.format("|| Đã xuất file dictionaryData.txt thành công, địa chỉ lưu file: \"%s\".\n", dictionaryDir);
             output.close();
             outputURL.close();
         } catch (FileNotFoundException e) {
-            System.out.format("|| %-150s||\n", "Error! Khong the xuat file." + e.getMessage());
+            System.out.format("|| %-150s||\n", "Error! Không thể xuất file." + e.getMessage());
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
-            System.out.format("|| %-150s||\n", "Error! Khong the xuat file." + e.getMessage());
+            System.out.format("|| %-150s||\n", "Error! Không thể xuất file." + e.getMessage());
             e.printStackTrace();
         } catch (IOException e) {
-            System.out.format("|| %-150s||\n", "Error! Khong the xuat file." + e.getMessage());
+            System.out.format("|| %-150s||\n", "Error! Không thể xuất file." + e.getMessage());
             e.printStackTrace();
         }
         System.out.println("||" + repeat("-", 151) + "||");
