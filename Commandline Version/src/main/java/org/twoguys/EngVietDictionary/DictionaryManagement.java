@@ -39,8 +39,8 @@ public class DictionaryManagement {
     private ArrayList<String> rawUserWordList = new ArrayList<String>();
     private ArrayList<TrieNode> trieList = new ArrayList<TrieNode>();
     private Scanner sc = new Scanner(System.in);
-    private final String ORIGINAL_WORD_SOURCE = "/eng-dictionaries.txt";
-    private final String USER_WORD_SOURCE = "\\user-eng-dictionaries.txt";
+    private final String ORIGINAL_WORD_SOURCE = "/vie-dictionaries.txt";
+    private final String USER_WORD_SOURCE = "\\user-vie-dictionaries.txt";
     private final String USER_DICTIONARY_DIR = System.getProperty("user.home").concat("\\Documents\\Eng-VietDictionaryCMD");
 
     private String repeat(String t, int times) {
@@ -365,7 +365,7 @@ public class DictionaryManagement {
                         }
 
                         save = true;
-                        System.out.format("|| %-150s||\n", "Da luu thanh cong file user-eng-dictionaries.txt !");
+                        System.out.format("|| %-150s||\n", "Da luu thanh cong file user-vie-dictionaries.txt !");
                         System.out.format("|| File duoc luu tai " + userWordDir + "\n");
                         System.out.format("|| %-150s||\n", "");
                         System.out.format("|| %-150s||\n", "Danh sach cac tu ban da them trong tu dien: ");
