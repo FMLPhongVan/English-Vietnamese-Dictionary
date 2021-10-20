@@ -1,8 +1,11 @@
 package org.twoguys.EngVietDictionary;
 
-public class Dictionary {
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
-    public static void main(String[] args) {
+public class Dictionary {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         DictionaryManagement dictionaryManagement = new DictionaryManagement();
         dictionaryManagement.init();
         dictionaryManagement.run();
