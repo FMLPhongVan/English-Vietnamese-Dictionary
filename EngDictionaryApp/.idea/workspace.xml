@@ -5,87 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f1021b4-d48b-436c-bde6-5b32df80e8db" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/7.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/org/twoguys/engdictionaryapp/DictionaryApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/org/twoguys/engdictionaryapp/DictionaryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/org/twoguys/engdictionaryapp/DictionaryDatabase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/org/twoguys/engdictionaryapp/DictionaryManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/org/twoguys/engdictionaryapp/TrieNode/TrieNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/classes/java/main/org/twoguys/engdictionaryapp/TrieNode/Word.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/libs/EngDictionaryApp-1.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/resources/main/org/twoguys/engdictionaryapp/SourceSansPro-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/resources/main/org/twoguys/engdictionaryapp/app.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/resources/main/org/twoguys/engdictionaryapp/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/resources/main/org/twoguys/engdictionaryapp/webStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/org/twoguys/engdictionaryapp/DictionaryApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/org/twoguys/engdictionaryapp/DictionaryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/org/twoguys/engdictionaryapp/DictionaryDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/org/twoguys/engdictionaryapp/DictionaryManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/org/twoguys/engdictionaryapp/TrieNode/TrieNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/java/org/twoguys/engdictionaryapp/TrieNode/Word.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/resources/org/twoguys/engdictionaryapp/SourceSansPro-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/resources/org/twoguys/engdictionaryapp/app.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/resources/org/twoguys/engdictionaryapp/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EngDictionaryApp/src/main/resources/org/twoguys/engdictionaryapp/webStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EngDictionaryApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EngDictionaryApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryDatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/TrieNode/TrieNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/TrieTree/TrieNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/TrieNode/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/TrieTree/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/twoguys/engdictionaryapp/VoiceHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/twoguys/engdictionaryapp/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/twoguys/engdictionaryapp/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/twoguys/engdictionaryapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/twoguys/engdictionaryapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/DictionaryManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/TrieNode/TrieNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/TrieNode/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/VoiceHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/VoiceHandler$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/VoiceHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/twoguys/engdictionaryapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/word.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1zTzk2wcisohdpByptbcWf8LCgS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/org/twoguys/engdictionaryapp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15820312" />
     <property name="project.structure.side.proportion" value="0.3844367" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Project\JavaProj\English-VietnameseDictionary\EngDictionaryApp\src\main\resources\org\twoguys\engdictionaryapp" />
       <recent name="E:\1st Term 2021-2022\OOP\BTL\src\main\resources\org\twoguys\engdictionaryapp" />
       <recent name="E:\1st Term 2021-2022\OOP\BTL\src\main\java\org\twoguys\engdictionaryapp" />
     </key>
@@ -143,11 +139,30 @@
       <workItem from="1634189347488" duration="1349000" />
       <workItem from="1634190782286" duration="67000" />
       <workItem from="1634190896579" duration="6000" />
+      <workItem from="1634190943522" duration="57843000" />
+      <workItem from="1634275590985" duration="30000" />
+      <workItem from="1634436377042" duration="26197000" />
+      <workItem from="1634521080840" duration="34538000" />
+      <workItem from="1634611968401" duration="9578000" />
+      <workItem from="1634628466798" duration="23427000" />
+      <workItem from="1634690088992" duration="36802000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -161,5 +176,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

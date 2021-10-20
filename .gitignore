@@ -1,0 +1,18 @@
+# IDEA
+.idea/
+.run/
+
+#IntelliJ
+out/
+target/
+
+.gradle
+/build/
+
+!gradle-wrapper.jar
+
+# VSCode
+.settings/
+.vscode/
+.project
+.classpath
