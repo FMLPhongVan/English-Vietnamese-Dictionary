@@ -99,15 +99,19 @@ public class DictionaryManagement {
         }
         String htmlData = databaseHandler.getWordDescriptionData(wordNode.getWord().getID());
         webEngine.loadContent(htmlData);
-        foundWord.setText(word);
+        if (foundWord != null) foundWord.setText(word);
         this.foundWord = word;
-        if (wordNode.getWord().getPronounce().equals("")) pronounce.setText("");
-        else pronounce.setText("/" + wordNode.getWord().getPronounce()+ "/");
 
-        if (wordNode.getWord().getFavourite() == 1) {
-            favButton.setIconColor(Color.valueOf("#ff0000"));
-        } else {
-            favButton.setIconColor(Color.valueOf("#ffffff"));
+        if (pronounce != null) {
+            if (wordNode.getWord().getPronounce().equals("")) pronounce.setText("");
+            else pronounce.setText("/" + wordNode.getWord().getPronounce() + "/");
+        }
+        if (favButton != null) {
+            if (wordNode.getWord().getFavourite() == 1) {
+                favButton.setIconColor(Color.valueOf("#ff0000"));
+            } else {
+                favButton.setIconColor(Color.valueOf("#ffffff"));
+            }
         }
         return true;
     }

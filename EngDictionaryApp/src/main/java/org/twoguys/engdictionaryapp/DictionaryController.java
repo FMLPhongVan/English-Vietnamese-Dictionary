@@ -256,7 +256,7 @@ public class DictionaryController implements Initializable {
         goToDefinitionButton.setText("Đi đến định nghĩa \""
                 + synonymsWordList.getSelectionModel().getSelectedItems().get(0) + "\"");
         if (dictionaryManagement.setSearchedWordInfo(synonymsWordList.getSelectionModel().getSelectedItems().get(0),
-                foundWord, wordPronounce, favouriteIcon)) {
+                null, null, null)) {
             goToDefinitionButton.setDisable(false);
         }
     }
@@ -266,7 +266,7 @@ public class DictionaryController implements Initializable {
         goToDefinitionButton.setText("Đi đến định nghĩa \""
                 + antonymsWordList.getSelectionModel().getSelectedItems().get(0) + "\"");
         if (dictionaryManagement.setSearchedWordInfo(antonymsWordList.getSelectionModel().getSelectedItems().get(0),
-                foundWord, wordPronounce, favouriteIcon)) {
+                null, null, null)) {
             goToDefinitionButton.setDisable(false);
         }
     }
@@ -406,7 +406,8 @@ public class DictionaryController implements Initializable {
             inpaneCancelButton.setDisable(false);
             inpaneSaveButton.setVisible(true);
             eraseAndEditWordList.setDisable(false);
-            eraseAndEditWordList.setVisible(false);
+            eraseAndEditWordList.setVisible(true);
+            dictionaryManagement.loadWordListView(eraseAndEditWordList);
             editSearchPane.setDisable(false);
             editSearchPane.setPromptText("Nhập và chọn từ muốn sửa...");
         }
@@ -420,7 +421,8 @@ public class DictionaryController implements Initializable {
             inpaneConfirmButton.setDisable(true);
             inpaneCancelButton.setDisable(false);
             eraseAndEditWordList.setDisable(false);
-            eraseAndEditWordList.setVisible(false);
+            eraseAndEditWordList.setVisible(true);
+            dictionaryManagement.loadWordListView(eraseAndEditWordList);
             editSearchPane.setDisable(false);
             editSearchPane.setPromptText("Nhập và chọn từ muốn xóa...");
         }
@@ -441,7 +443,8 @@ public class DictionaryController implements Initializable {
                     eraseAndEditWordList.toFront();
                 } else {
                     eraseAndEditWordList.getItems().clear();
-                    eraseAndEditWordList.setVisible(false);
+                    dictionaryManagement.loadWordListView(eraseAndEditWordList);
+                    //eraseAndEditWordList.setVisible(false);
                     eraseAndEditWordList.toBack();
                 }
                 break;
