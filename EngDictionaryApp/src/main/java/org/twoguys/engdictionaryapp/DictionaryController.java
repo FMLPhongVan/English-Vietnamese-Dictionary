@@ -373,6 +373,7 @@ public class DictionaryController implements Initializable {
         editSearchPane.setDisable(true);
         editSearchPane.setText("");
         editSearchPane.setPromptText("");
+        editSearchPane.setEditable(true);
         editWordPane.setDisable(true);
         editWordPane.setVisible(false);
         editWordPane.toBack();
@@ -394,6 +395,7 @@ public class DictionaryController implements Initializable {
             inpaneSaveButton.setDisable(true);
             inpaneSaveButton.setVisible(false);
             editSearchPane.setDisable(false);
+            editSearchPane.setEditable(true);
             editSearchPane.setPromptText("Nhập từ muốn thêm...");
         }
     }
@@ -409,6 +411,7 @@ public class DictionaryController implements Initializable {
             eraseAndEditWordList.setVisible(true);
             dictionaryManagement.loadWordListView(eraseAndEditWordList);
             editSearchPane.setDisable(false);
+            editSearchPane.setEditable(true);
             editSearchPane.setPromptText("Nhập và chọn từ muốn sửa...");
         }
     }
@@ -424,6 +427,7 @@ public class DictionaryController implements Initializable {
             eraseAndEditWordList.setVisible(true);
             dictionaryManagement.loadWordListView(eraseAndEditWordList);
             editSearchPane.setDisable(false);
+            editSearchPane.setEditable(true);
             editSearchPane.setPromptText("Nhập và chọn từ muốn xóa...");
         }
     }
@@ -434,6 +438,7 @@ public class DictionaryController implements Initializable {
         switch (currentEditPaneMode) {
             case IN_ADD_MODE_EDIT_PANE:
                 inpaneConfirmButton.setDisable(word.length() == 0);
+                newWordNeedEdit = word.trim();
                 break;
             case IN_EDIT_MODE_EDIT_PANE:
             case IN_DELETE_MODE_EDIT_PANE:
@@ -558,6 +563,7 @@ public class DictionaryController implements Initializable {
         editSearchPane.setEditable(true);
         editSearchPane.setText("");
         editSearchPane.setPromptText("");
+        editSearchPane.setEditable(true);
         editWordPane.setDisable(true);
         editWordPane.setVisible(false);
         editWordPane.toBack();

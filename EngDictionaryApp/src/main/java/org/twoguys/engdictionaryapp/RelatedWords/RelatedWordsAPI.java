@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,9 +23,9 @@ public class RelatedWordsAPI {
 
         String url;
         if (relatedType == SYNONYMS) {
-            url = "https://api.datamuse.com/words?rel_syn=" + wordToSearch;
+            url = "https://api.datamuse.com/words?rel_syn=" + URLEncoder.encode(wordToSearch, StandardCharsets.UTF_8);
         } else {
-            url = "https://api.datamuse.com/words?rel_ant=" + wordToSearch;
+            url = "https://api.datamuse.com/words?rel_ant=" + URLEncoder.encode(wordToSearch, StandardCharsets.UTF_8);
         }
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
