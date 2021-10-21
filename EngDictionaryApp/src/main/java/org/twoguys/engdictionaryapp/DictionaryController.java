@@ -188,6 +188,11 @@ public class DictionaryController implements Initializable {
     }
 
     public void onEnterSearchField(KeyEvent e) {
+        String typeWord = searchTextField.getCharacters().toString();
+        if (typeWord == null || typeWord.equals("")) {
+            allWordList.toFront();
+            searchResultInfo.setText("");
+        }
         dictionaryManagement.loadWordListView(suggestedWordList, searchTextField.getCharacters().toString(), searchResultInfo);
         allWordList.toBack();
         suggestedWordList.toFront();
@@ -219,6 +224,7 @@ public class DictionaryController implements Initializable {
     }
 
     public void onSuggestedWordListClicked(MouseEvent e) {
+        System.out.println(1);
         if (suggestedWordList.getSelectionModel().getSelectedItems().isEmpty()) return;
         String selectedWord = suggestedWordList.getSelectionModel().getSelectedItems().get(0);
         setUpFoundResult(selectedWord);

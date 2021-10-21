@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.twoguys.engdictionaryapp.AlertInfo.AlertInfo;
@@ -18,7 +19,8 @@ public class DictionaryApplication extends Application {
         this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(DictionaryApplication.class.getResource("app.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
-        stage.setTitle("Hello!");
+        stage.setTitle("Từ điển Anh - Việt");
+        stage.getIcons().add(new Image(DictionaryApplication.class.getResourceAsStream("dictionaryIcon.png")));
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent windowEvent) {

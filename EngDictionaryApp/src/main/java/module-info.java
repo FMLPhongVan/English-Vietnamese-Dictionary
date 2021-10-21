@@ -14,7 +14,7 @@ module org.twoguys.engdictionaryapp {
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
 
-    opens org.twoguys.engdictionaryapp to javafx.fxml;
+    opens org.twoguys.engdictionaryapp to javafx.fxml, javafx.controls;
     exports org.twoguys.engdictionaryapp;
     exports org.twoguys.engdictionaryapp.TrieTree;
     opens org.twoguys.engdictionaryapp.TrieTree to javafx.fxml;
@@ -26,4 +26,6 @@ module org.twoguys.engdictionaryapp {
     opens org.twoguys.engdictionaryapp.VoiceHandle to javafx.fxml;
     exports org.twoguys.engdictionaryapp.RelatedWords;
     opens org.twoguys.engdictionaryapp.RelatedWords to javafx.fxml;
+    exports org.twoguys.engdictionaryapp.GoogleAPI;
+    opens org.twoguys.engdictionaryapp.GoogleAPI to javafx.fxml;
 }

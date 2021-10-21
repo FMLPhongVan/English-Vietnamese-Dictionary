@@ -204,8 +204,8 @@ public class DictionaryDatabaseHandler {
             else if (historyType == HistoryTable.EDIT) desTable = "editHistory";
             else if (historyType == HistoryTable.DELETE) desTable = "deleteHistory";
 
-            String firstEx = "UPDATE " + desTable + " SET time = \'" + tmp[0] + "\', date = \'" + tmp[1] + "\' WHERE word = \'" + word + "\';";
-            String secondEx = "INSERT OR IGNORE INTO " + desTable + " (word, time, date) VALUES (\'" + word + "\',\'" + tmp[0] + "\',\'" + tmp[1] + "');";
+            String firstEx = "UPDATE " + desTable + " SET time = \"" + tmp[0] + "\", date = \"" + tmp[1] + "\" WHERE word = \"" + word + "\";";
+            String secondEx = "INSERT OR IGNORE INTO " + desTable + " (word, time, date) VALUES (\"" + word + "\",\"" + tmp[0] + "\",\"" + tmp[1] + "\");";
 
             System.out.println(firstEx + "\n" + secondEx);
 

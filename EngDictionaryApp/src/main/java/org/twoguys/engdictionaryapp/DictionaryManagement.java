@@ -82,7 +82,9 @@ public class DictionaryManagement {
             } else {
                 trieTree.findSuggested(word, listViewData);
                 if (resultInfo != null) {
-                    resultInfo.setText("Tìm thấy " + listViewData.size() + " từ phù hợp:");
+                    if (listViewData.size() != 0) {
+                        resultInfo.setText("Tìm thấy " + listViewData.size() + " từ phù hợp:");
+                    }
                 }
             }
 
