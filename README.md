@@ -29,11 +29,11 @@ Tham khảo giới thiệu chi tiết hơn tại *[PowerPoint thuyết trình](h
 #### *1. Command Line*
 Để sử dùng, cần tải source code về máy. Tìm và sử dụng file Run.bat trong folder Run.
 
-Trong phiên bản Command Line đã có hướng dẫn chi tiết cho các thao tác và chứ năng.
+Trong phiên bản Command Line đã có hướng dẫn chi tiết cho các thao tác và chức năng.
 
 **Lưu ý:* Khi dùng file jar hoặc source code để chạy chương trình, cần đảm bảo phông chữ là Consolas và điều chỉnh code page để hiển thị tiếng Việt bằng lệnh:
-> C:\> chcp 65001
+> C:\\> chcp 65001
 ------------------------------------------------------------------------------------------------------------------------
 #### *2.Phiên bản hoàn thiện đồ họa*
-Để sự dụng, cần tải source code về máy. Sau đó chạy chương trình và sử dụng các chức năng mình cần.
+Để sử dụng, cần tải source code về máy. Sau đó chạy chương trình và sử dụng các chức năng mình cần.
 
